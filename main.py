@@ -1,8 +1,8 @@
-# Escribe un programa que verifique si un número es par o impar utilizando if
+# Escribe un programa que determine si una nota numérica es "Aprobado" o "Reprobado" usando if.
 
-number = float(input('Give me a number: '))
+grade = float(input('Please gimme the grade you scored (0/10): '))
 
-if number % 2 == 0:
-    print('This is a pair number!')
+if grade < 6.5:
+    print('Failed')
 else:
-    print('This is an unpair number!')
+    print('Approved')
