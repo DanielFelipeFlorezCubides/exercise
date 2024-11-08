@@ -1,14 +1,29 @@
-# Escribe un programa que determine el tipo de triángulo en función de sus lados usando if.
-# Solicita al usuario que ingrese las longitudes de los tres lados de un triángulo. 
-# Determina si el triángulo es equilátero, isósceles o escaleno.
+# Escribe un programa que, dado un número del 1 al 7, imprima el día correspondiente de la semana usando match.
+# Solicita al usuario un número del 1 al 7 y muestra el día de la semana correspondiente (1 = Lunes, 7 = Domingo).
 
-sideLenght_1 = float(input('Please type the lenght of the first side of the triangle: '))
-sideLenght_2 = float(input('Please type the lenght of the second side of the triangle: '))
-sideLenght_3 = float(input('Please type the lenght of the third side of the triangle: '))
+def semana(number):
+    match number:
+        case 1:
+            monday = 'Today is Monday!'
+            print(monday)
+        case 2:
+            tuesday = 'Today is Tuesday!'
+            print(tuesday)
+        case 3:
+            wednesday = 'Today is Wednesday!'
+            print(wednesday)
+        case 4:
+            thursday = 'Today is Thursday!'
+            print(thursday)
+        case 5:
+            friday = 'Today is Friday!'
+            print(friday)
+        case 6:
+            saturday = 'Today is Saturday!'
+            print(saturday)
+        case 7:
+            sunday = 'Today is Sunday!'
+            print(sunday)
 
-if sideLenght_1 == sideLenght_2 and sideLenght_1 == sideLenght_3:
-    print('This is an equilateral triangle!')
-elif (sideLenght_1 == sideLenght_2 and sideLenght_1 != sideLenght_3) or (sideLenght_1 != sideLenght_2 and sideLenght_1 == sideLenght_3):
-    print('This is an isoceles triangle!')
-else:
-    print('This is a scalene triangle!')
+number = int(input('Please type a number from 1 to 7: '))
+semana(number)
