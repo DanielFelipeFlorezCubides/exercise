@@ -1,25 +1,14 @@
-# Utiliza match para implementar una calculadora simple.
+# Escribe un programa que determine el tipo de triángulo en función de sus lados usando if.
+# Solicita al usuario que ingrese las longitudes de los tres lados de un triángulo. 
+# Determina si el triángulo es equilátero, isósceles o escaleno.
 
-def calculator(number_1, number_2, operation):
-    match operation:
+sideLenght_1 = float(input('Please type the lenght of the first side of the triangle: '))
+sideLenght_2 = float(input('Please type the lenght of the second side of the triangle: '))
+sideLenght_3 = float(input('Please type the lenght of the third side of the triangle: '))
 
-        case '+':
-            sum = number_1 + number_2
-            print(sum)
-        case '-':
-           minus = number_1 - number_2
-           print(minus)
-        case 'x':
-            times = number_1 * number_2
-            print(times)
-        case '/':
-            division = number_1 / number_2
-            print(division)
-        case _:
-            print('''Operation didn't recognize''')
-
-operation = input('Please tell me which operation you wanna execute( + , - , x , /): ')
-number_1 = int(input('Please gimme a number: '))
-number_2 = int(input('Please gimme another number: '))
-    
-calculator(number_1, number_2,operation)
+if sideLenght_1 == sideLenght_2 and sideLenght_1 == sideLenght_3:
+    print('This is an equilateral triangle!')
+elif (sideLenght_1 == sideLenght_2 and sideLenght_1 != sideLenght_3) or (sideLenght_1 != sideLenght_2 and sideLenght_1 == sideLenght_3):
+    print('This is an isoceles triangle!')
+else:
+    print('This is a scalene triangle!')
