@@ -1,21 +1,17 @@
-# Escribe un programa que asigne una calificación basada en una nota numérica.
-# Solicita una nota numérica y clasifícala como A (90-100), B (80-89), C (70-79), D (60-69), o F (<60).
+# Escribe un programa que convierta grados Celsius a Fahrenheit o Fahrenheit a Celsius usando match.
+# Solicita al usuario que ingrese una temperatura y una escala (C o F). 
+# Convierte la temperatura a la escala opuesta usando match.
 
-def grade_classification(grade):
-    match grade:
-        case g if 90 <= g <= 100:
-            return "A"
-        case g if 80 <= g <= 89:
-            return "B"
-        case g if 70 <= g <= 79:
-            return "C"
-        case g if 60 <= g <= 69:
-            return "D"
-        case g if 0 <= g <= 59:
-            return "F"
-        case _:
-            print('That number is out of range')
+def conversor(temperature, operation):
+    match operation:
+        case 'c':
+            result = ((temperature - 32) / 1.8)
+            return round(result), 'Celsius'
+        case 'f':
+            result = ((temperature * 1.8) + 32)
+            return round(result), 'Farenheit'
 
-grade = float(input('Please type your grade: '))
-classification = grade_classification(grade)
-print(f'Your score was: {classification}')
+temperature = float(input('Please type the initial temperature to convert: '))
+operation = input('Please select between Celsius or Farenheit scale(c \ f): ')
+result = conversor(temperature, operation)
+print(f'Te conversion is: {result}')
