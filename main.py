@@ -1,17 +1,19 @@
-# Escribe un programa que convierta grados Celsius a Fahrenheit o Fahrenheit a Celsius usando match.
-# Solicita al usuario que ingrese una temperatura y una escala (C o F). 
-# Convierte la temperatura a la escala opuesta usando match.
+# Escribe un programa que calcule el IMC y determine el estado de peso.
+# Solicita al usuario su peso (en kg) y su altura (en metros). 
+# Calcula el IMC y clasifícalo en bajo peso (<18.5), peso normal (18.5-24.9), sobrepeso (25-29.9), u obesidad (>=30).
 
-def conversor(temperature, operation):
-    match operation:
-        case 'c':
-            result = ((temperature - 32) / 1.8)
-            return round(result), 'Celsius'
-        case 'f':
-            result = ((temperature * 1.8) + 32)
-            return round(result), 'Farenheit'
+weight = float(input('Please type your weight(kg): '))
+height = float(input('Please type your height(m): '))
 
-temperature = float(input('Please type the initial temperature to convert: '))
-operation = input('Please select between Celsius or Farenheit scale(c \ f): ')
-result = conversor(temperature, operation)
-print(f'Te conversion is: {result}')
+if weight > 0 and height > 0:
+    imc = (weight / (height ** 2))
+    print(f'Your imc is: {round(imc)}')
+
+if imc < 18.5:
+    print('You have a low weight')
+elif imc <= 24.9:
+    print('Your weight is normal')
+elif imc <= 29.9:
+    print('Your weight exceed the recommended one')
+else:
+    print('You have obesity weight level')
