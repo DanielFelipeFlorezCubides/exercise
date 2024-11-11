@@ -1,16 +1,21 @@
-# Escribe un programa que clasifique a una persona en función de su edad.
-# Solicita la edad de la persona e indica si es niño (0-12 años), 
-# adolescente (13-17 años), adulto (18-64 años) o anciano (65 años o más).
+# Escribe un programa que asigne una calificación basada en una nota numérica.
+# Solicita una nota numérica y clasifícala como A (90-100), B (80-89), C (70-79), D (60-69), o F (<60).
 
-age = int(input('Plese type your age: '))
+def grade_classification(grade):
+    match grade:
+        case g if 90 <= g <= 100:
+            return "A"
+        case g if 80 <= g <= 89:
+            return "B"
+        case g if 70 <= g <= 79:
+            return "C"
+        case g if 60 <= g <= 69:
+            return "D"
+        case g if 0 <= g <= 59:
+            return "F"
+        case _:
+            print('That number is out of range')
 
-if age <= 12:
-    print('''You're a kid''')
-elif age > 12 and age <= 17:
-    print('''You're a teenager''')
-elif age > 17 and age <= 64:
-    print('''You're an adult''')
-elif age > 64 and age <= 120:
-    print('''You're a senior''')
-else:
-    print('Error, a human cannot live more than 120 years')
+grade = float(input('Please type your grade: '))
+classification = grade_classification(grade)
+print(f'Your score was: {classification}')
