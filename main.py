@@ -1,19 +1,23 @@
-# Escribe un programa que calcule el costo de estacionamiento basado en el número de horas, con tarifas progresivas.
-# El costo de estacionamiento se calcula de la siguiente manera:
+# Escribe un programa que clasifique un triángulo en agudo, obtuso o rectángulo según sus ángulos internos usando if.
+# Solicita al usuario los tres ángulos de un triángulo y clasifícalo en:
 
-# Primera hora: $5
-# Segunda a cuarta hora: $4 por hora
-# Más de cuatro horas: $3 por cada hora adicional
-# Solicita al usuario el número de horas de estacionamiento y calcula el costo total.
+# Agudo: Todos los ángulos son menores a 90°.
+# Rectángulo: Un ángulo es exactamente 90°.
+# Obtuso: Un ángulo es mayor a 90°.
 
-hours = int(input("Type the parking hours: "))
-total = 0
-additionalHours = hours - 4 
-if hours == 1:
-    total += 5
-elif 2 <= hours <= 4:
-    total += 5 + ((hours - 1) * 4)
-elif hours > 4:
-    total += 17 + (additionalHours * 3)
-        
-print(f"The total ammount to pay will be: ${total}")
+while True:
+    firstAngle = float(input("Enter the first angle: "))
+    secondAngle = float(input("Enter the second angle: "))
+    thirdAngle = float(input("Enter the third angle: "))
+    
+    if (firstAngle + secondAngle + thirdAngle) != 180:
+        print("Thats not a triangle, try again")
+    elif firstAngle < 90 and secondAngle < 90 and thirdAngle < 90:
+        print("This is an acute triangle")
+        break
+    elif firstAngle == 90 or secondAngle == 90 or thirdAngle == 90:
+        print("This is a rectangle triangle")
+        break
+    else:
+        print("This in an obtuse triangle")
+        break
