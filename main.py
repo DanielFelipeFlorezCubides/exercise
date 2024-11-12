@@ -1,25 +1,14 @@
-# Escribe un programa que determine el mayor de tres números usando if.
-# Solicita al usuario que ingrese tres números y determina cuál es el mayor.
+# Escribe un programa que permita al usuario adivinar una letra secreta usando match.
+# El programa contiene una letra secreta (por ejemplo, "A"). 
+# El usuario debe adivinar la letra, y el programa le indicará si acertó o no.
 
-fNumber = int(input('Please type the first number: '))
-sNumber = int(input('Please type the second number: '))
-tNumber = int(input('Please type the third number: '))
+import random
+import string
 
-if fNumber > sNumber and fNumber > tNumber:
-    print(f'{fNumber} is the higher number')
-elif fNumber == sNumber and fNumber > tNumber:
-    print(f'{fNumber} is the higher number')
-elif fNumber > sNumber and fNumber == tNumber:
-    print(f'{fNumber} is the higher number')
-elif fNumber < sNumber and sNumber > tNumber:
-    print(f'{sNumber} is the higher number')
-elif fNumber > sNumber and sNumber == tNumber:
-    print(f'{sNumber} is the higher number')
-elif fNumber == sNumber and sNumber > tNumber:
-    print(f'{sNumber} is the higher number')
-elif tNumber > sNumber and fNumber < tNumber:
-    print(f'{tNumber} is the higher number')
-elif tNumber == sNumber and fNumber > tNumber:
-    print(f'{tNumber} is the higher number')
-elif tNumber > sNumber and fNumber == tNumber:
-    print(f'{tNumber} is the higher number')
+letra_secreta = random.choice(string.ascii_uppercase)
+letra_usuario = input("Adivina la letra secreta (de A a Z): ").upper()
+
+if letra_usuario == letra_secreta:
+    print("¡Felicidades! Adivinaste la letra secreta.")
+else:
+    print(f"Lo siento, esa no es la letra secreta. La letra correcta era: {letra_secreta}.")
