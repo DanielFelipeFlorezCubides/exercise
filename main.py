@@ -1,23 +1,18 @@
-# Escribe un programa que clasifique un triángulo en agudo, obtuso o rectángulo según sus ángulos internos usando if.
-# Solicita al usuario los tres ángulos de un triángulo y clasifícalo en:
+# Escribe un programa que solicite al usuario un número entero positivo n y calcule la suma de los primeros n números enteros. 
+# Utiliza un ciclo for para realizar la suma.
 
-# Agudo: Todos los ángulos son menores a 90°.
-# Rectángulo: Un ángulo es exactamente 90°.
-# Obtuso: Un ángulo es mayor a 90°.
-
+sum = 0
 while True:
-    firstAngle = float(input("Enter the first angle: "))
-    secondAngle = float(input("Enter the second angle: "))
-    thirdAngle = float(input("Enter the third angle: "))
-    
-    if (firstAngle + secondAngle + thirdAngle) != 180:
-        print("Thats not a triangle, try again")
-    elif firstAngle < 90 and secondAngle < 90 and thirdAngle < 90:
-        print("This is an acute triangle")
+    try:
+        n = int(input('Please type a possitive number: '))
+        if n < 0:
+            raise ValueError()
+        if n == 0:
+            raise ValueError()
+        
+        for i in range(n):
+            sum = sum + (i+1)
+        print(f'The sum of the first numbers before {n} is: {sum}')
         break
-    elif firstAngle == 90 or secondAngle == 90 or thirdAngle == 90:
-        print("This is a rectangle triangle")
-        break
-    else:
-        print("This in an obtuse triangle")
-        break
+    except ValueError as e:
+        print('Dear user, you can only type possitive numbers. Please correct it')
