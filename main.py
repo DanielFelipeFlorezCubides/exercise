@@ -1,22 +1,25 @@
-# Escribe un programa que genere un número aleatorio entre 1 y 100 y permita al usuario adivinarlo.
-# El programa debe dar pistas si el número ingresado es mayor o menor que el número secreto. 
-# Usa un ciclo while para permitir al usuario seguir intentando hasta que adivine el número.
+# Escribe un programa que solicite al usuario ingresar números enteros indefinidamente.
+# El programa debe sumar los números siempre que sean pares, pero debe detenerse si el usuario ingresa un número impar. 
+# Usa un ciclo while para lograr esto.
 
-import random
+# Inicializar la suma
+pairs = 0
 
-sNumber = random.randint(1, 100)
-print("I have choosen a number between 1 and 100, try to guess wich one is it!")
+print("Type integer numbers, the program will sum pair numbers but if you type an unpair one it will finish.")
 
 while True:
     try:
-        guess = int(input("Type your guess: "))
-
-        if guess < sNumber:
-            print("The number is higher than your guess. Keep trying!")
-        elif guess > sNumber:
-            print("The number is less than your guess. Keep trying!")
-        else:
-            print("Congrats! You have guessed the number.")
-            break  
+        # Solicitar al usuario un número entero
+        number = int(input("Type your number: "))
+        
+        # Comprobar si el número es impar
+        if number % 2 != 0:
+            print("You typed an unpair number, the program has just finished.")
+            break  # Salir del bucle si el número es impar
+        
+        # Si el número es par, añadirlo a la suma
+        pairs += number
+        print(f"The current sum is: {pairs}")
+    
     except ValueError:
         print("Please, type a valid number.")
