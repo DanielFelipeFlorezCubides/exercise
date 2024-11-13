@@ -1,18 +1,15 @@
-# Escribe un programa que solicite al usuario un número entero positivo n 
-# y calcule el factorial de dicho número (n! = 1 * 2 * 3 * ... * n). Usa un ciclo for para realizar el cálculo.
+# Escribe un programa que solicite al usuario dos números enteros, un valor de inicio y un valor de fin. 
+# El programa debe imprimir todos
 
-result = 1
 while True:
     try:
-        n = int(input('Please type a possitive number: '))
-        if n < 0:
-            raise ValueError()
-        if n == 0:
-            raise ValueError()
+        bNumber = int(input('Please type the beggining number: '))
+        eNumber = int(input('Please type the end number: '))
+        if bNumber < 0 and eNumber <= 0:
+            raise ValueError
         
-        for i in range(1, n+1):
-            result *= i
-        print(f'The factorial of {n} is: {result}')
+        for bNumber in range(eNumber+1):
+            print(f'The numbers between are: {bNumber}')
         break
     except ValueError as e:
-        print('Dear user, you can only type possitive numbers. Please correct it')
+        print('Dear user, you have to use a possitive number in each cases. Please correct it')
